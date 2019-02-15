@@ -1,26 +1,33 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Dashboard from './Component/Dashboard/Dashboard';
+import Header from './Component/Header/Header';
+import Form from './Component/Form/Form';
 import './App.css';
 
 class App extends Component {
-  render() {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      products: [{
+        image:'https://www.keenfootwear.com/dw/image/v2/BBCF_PRD/on/demandware.static/-/Sites-keen_catalog_master/default/dwc0347914/product-images/M-SUMMIT-COUNTY/1002646/1002646_P_PDP.jpg?sw=1100&sh=1100&sm=fit',
+        name: 'Snowboots',
+        price: '$35'
+      }],
+       
+    };
+  }
+ 
+
+
+  
+  render(props) {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <div className="App">     
+        <Dashboard products={this.state.products}/>
+        <Form/>
+        <Header/>
+        </div>
     );
   }
 }
